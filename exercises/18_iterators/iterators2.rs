@@ -24,6 +24,7 @@ fn capitalize_words_vector(words: &[&str]) -> Vec<String> {
 fn capitalize_words_string(words: &[&str]) -> String {
     words
         .iter()
+        .filter(|&word| !word.trim().is_empty())
         .map(|&word| capitalize_first(word))
         .collect::<Vec<String>>()
         .join(" ")
